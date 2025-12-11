@@ -233,7 +233,28 @@ Mon travail explore le lien entre technologie, narration et émotion.
         </footer>
     </div>
 
-    <script src="assets/index.js">
+    <script>
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const content = section.querySelector('.work-content');
+    const icon = section.querySelector('.toggle-icon');
+    
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.textContent = '−';
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '+';
+    }
+}
+
+// Hide all sections by default on page load
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.work-content').forEach(content => {
+        content.style.display = 'none';
+    });
+});
+</script>
        
     </script>
 </body>
