@@ -236,25 +236,21 @@ Mon travail explore le lien entre technologie, narration et émotion.
 <script>
 function toggleSection(sectionId) {
     const section = document.getElementById(sectionId);
-    const content = section.querySelector('.work-content');
     const icon = section.querySelector('.toggle-icon');
     
-    if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
-        content.style.maxHeight = 'none';  
-        content.style.overflow = 'visible'; 
-        icon.textContent = '−';
-    } else {
-        content.style.display = 'none';
+    // Toggle the 'expanded' class
+    if (section.classList.contains('expanded')) {
+        section.classList.remove('expanded');
         icon.textContent = '+';
+    } else {
+        section.classList.add('expanded');
+        icon.textContent = '−';
     }
 }
 
-// Hide all sections by default on page load
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.work-content').forEach(content => {
-        content.style.display = 'none';
-    });
+    // Optional: You can add any initialization here
 });
 </script>
        
